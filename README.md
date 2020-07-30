@@ -1,4 +1,4 @@
-# Curso de Spring DevMedia
+# Curso de Spring https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.devmedia.com.br%2Fcomo-criar-um-blog-com-django-e-python%2F33710&psig=AOvVaw1_onaKbm_RAG-MurCcZjKL&ust=1596214646485000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjGsYq59eoCFQAAAAAdAAAAABAD DEVMEDIA
 - [X] 1. Introducão
 - [X] 2. Visão Geral do projeto
 - [X] 3. Configurando o ambiente de desenvolvimento. 
