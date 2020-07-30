@@ -1,5 +1,5 @@
 
-# Curso de Spring  <img src="https://www.devmedia.com.br/favicon.png" style="max-width:3%;"> DEVMEDIA
+# Curso de Spring  <img src="https://www.devmedia.com.br/favicon.png?w=112" height="100"> DEVMEDIA
 =======
 - [X] 1. Introducão
 - [X] 2. Visão Geral do projeto
