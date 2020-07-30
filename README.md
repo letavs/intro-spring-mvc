@@ -1,11 +1,11 @@
-# Curso de Spring https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.devmedia.com.br%2Fcomo-criar-um-blog-com-django-e-python%2F33710&psig=AOvVaw1_onaKbm_RAG-MurCcZjKL&ust=1596214646485000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjGsYq59eoCFQAAAAAdAAAAABAD DEVMEDIA
+# Curso de Spring  DEVMEDIA
 - [X] 1. Introducão
 - [X] 2. Visão Geral do projeto
 - [X] 3. Configurando o ambiente de desenvolvimento. 
 - [X] 4. Configurando o Spring MVC
 - [X] 5. Meu primeiro Contoller
 - [X] 6. Criando o model
-- [ ] 7. Apresentando o DAO
+- [X] 7. Apresentando o DAO
 - [ ] 8. Criando a tela de listagem
 - [ ] 9. Listando os registro em uma tabela 
 - [ ] 10. Criando a tela de cadastro e edição
