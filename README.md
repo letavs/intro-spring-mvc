@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Curso de Spring  <img src="https://www.devmedia.com.br/favicon.png" style="max-width:3%;"> DEVMEDIA
+=======
+# Curso de Spring  <img src="https://www.devmedia.com.br/favicon.png" style="max-width:4%;"> DEVMEDIA
+>>>>>>> branch 'master' of https://github.com/letavs/intro-spring-mvc.git
 - [X] 1. Introducão
 - [X] 2. Visão Geral do projeto
 - [X] 3. Configurando o ambiente de desenvolvimento. 
