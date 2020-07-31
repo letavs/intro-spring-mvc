@@ -13,6 +13,7 @@ public class WelcomeController {
 		//return "welcome";
 	return "redirect:/usuario/todos"; // O redirect e feito a partir do Controller
 	}
+	
 	@RequestMapping(value ="/teste", method = RequestMethod.GET)
 	public ModelAndView teste () {
 		ModelAndView view= new ModelAndView("welcome");
