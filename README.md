@@ -1,6 +1,6 @@
 
-# Curso de Spring  <img src="https://www.devmedia.com.br/favicon.png?w=112" height="50"> DEVMEDIA
-=======
+# Curso de Spring  <img src="https://www.devmedia.com.br/favicon.png?w=112" height="40"> DEVMEDIA
+
 - [X] 1. Introducão
 - [X] 2. Visão Geral do projeto
 - [X] 3. Configurando o ambiente de desenvolvimento. 
