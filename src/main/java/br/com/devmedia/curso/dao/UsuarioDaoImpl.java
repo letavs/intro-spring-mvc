@@ -32,7 +32,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public void salvar(Usuario usuario) {
-		// O id sera setado no momento da execuca com CurrentTimeMillis(Java 7) e a
+		// O id sera setado no momento da executa com CurrentTimeMillis(Java 7) e a
 		// Lista adiciona o usuario
 		usuario.setId(System.currentTimeMillis());
 		lista.add(usuario);
@@ -40,7 +40,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public void editar(Usuario usuario) {
-		// TODO Java8 Lambda
+		//  Java8 Lambda
 		lista.stream()
 			.filter(u -> u.getId().equals(usuario.getId())) // pega o id e compara com usuario
 			.forEach(u -> { // o forech ira localizar o usuario retornado do filter 
@@ -51,23 +51,23 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public void excluir(Long id) {
-		// TODO O Lambda ira encontrar o id comparando com o id de referencia. 
+		// O Lambda ira encontrar o id comparando com o id de referencia. 
 		lista.removeIf(u -> u.getId().equals(id));//O metodo removeif se encarregara de remover 
 
 	}
 
 	@Override
 	public Usuario getId(Long id) {
-		// TODO Auto-generated method stub
+	
 		return lista.stream()
 				.filter(u -> u.getId().equals(id))// filter ira comparar com o id do paramento
-				.collect(Collectors.toList())// collect ira collectar o objeto da lista
+				.collect(Collectors.toList())// collect ira coletar o objeto da lista
 				.get(0);
 	}
 
 	@Override
 	public List<Usuario> getLista() {
-		// TODO Retorna a lista
+
 		return lista;
 	}
 }

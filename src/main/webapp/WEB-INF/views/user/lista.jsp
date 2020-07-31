@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container">
-		// O container será usado pelo bootstrap
+<!-- 		 O container será usado pelo bootstrap -->
 		<h1>Lista de Usuários</h1>
 		<hr>
 		<div>
@@ -22,7 +22,7 @@
 		<hr>
 		<div class="panel-default">
 			<div class="panel-heading">
-				<span>${message == null ? '&nbsp'; : message}</span>
+				 <span>${message == null ? '&nbsp;' : message}</span>
 			</div>
 
 			<table class="table table-striped table-condensed">
@@ -43,12 +43,11 @@
 								<a class="btn btn-danger" href="#">Excluir</a>
 							</td>
 					</c:forEach>
-
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<footer class="footer"></footer>
+	<footer class="footer"> <p>&copy; 2017 DevMedia</p></footer>
 	<hr>
 </body>
 </html>
