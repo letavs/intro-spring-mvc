@@ -16,8 +16,8 @@
 		<hr>
 		<div>
 
-
-			<a class="btn btn-default" href="#">Novo Usuário</a>
+			<spring:url value="/usuario/cadastro" var="cadastro"/>
+			<a class="btn btn-default" href="${cadastro} ">Novo Usuário</a>
 		</div>
 		<hr>
 		<div class="panel-default">
@@ -34,12 +34,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="usuario" items="${usuario }"> 
+					<c:forEach var="cadaUsuario" items="${usuarios }"> 
 						<tr>
-							<td>${usuario.id }</td>
-							<td>${usuario.nome }&nbsp;${usuario.sobrenome }</td>
+							<td>${cadaUsuario.id }</td>
+							<td>${cadaUsuario.nome }&nbsp;${cadaUsuario.sobrenome }</td>
 							<td>
-								<a class="btn btn-info" href="#">Editar</a> 
+							
+								<spring:url value="/usuario/update/${cadaUsuario.id}" var="update"/>
+								<a class="btn btn-info" href="${update}">Editar</a> 
 								<a class="btn btn-danger" href="#">Excluir</a>
 							</td>
 					</c:forEach>
