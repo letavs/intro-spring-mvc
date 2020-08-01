@@ -27,7 +27,7 @@
 				form:input tambem e um mecanismo do Spring, ao declaramos devemos indicar o path e ele fara a conexao entre o formulario e o objeto de domini. Lancando uma excecao caso a variavel nao exista.  
 				/>
 			-->
-				<spring:url value="${cadaUsuario.id == null ? '/usuario/save' : '/usuario/update'}" var="save"/>
+				<spring:url value="${usuario.id == null ? '/usuario/save' : '/usuario/update'}" var="save"/>
 				<form:form modelAttribute="usuario" action="${save}" method="post"> 
 					<form:hidden path="id"/>
 					<div class="form-group">

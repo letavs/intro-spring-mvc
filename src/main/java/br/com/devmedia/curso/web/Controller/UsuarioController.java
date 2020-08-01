@@ -46,7 +46,7 @@ public class UsuarioController {
 	public String save(@ModelAttribute("usuario") Usuario usuario, RedirectAttributes attributes) {
 		dao.salvar(usuario);
 		attributes.addFlashAttribute("message", "Cadastro efetuado com sucesso!");
-		System.out.println("passei aqui!");
+		System.out.println("Objeto Salvo!");
 		return "redirect:/usuario/todos";
 	}
 	
@@ -66,12 +66,21 @@ public class UsuarioController {
 	}
 
 	/**
-	*
+	* Esse sera o metodo que realmente fara alteracao
 	 **/
 	@PostMapping("/update")
 	public ModelAndView update(@ModelAttribute("usuario") Usuario usuario, RedirectAttributes attr) {
 		dao.editar(usuario);
 		attr.addFlashAttribute("message", "Usuario Alterado com sucesso!");
+		System.out.println("Objeto Alterado");
+		return new ModelAndView("redirect:/usuario/todos");
+	}
+	
+	@GetMapping("/deletar/{id}")
+	public ModelAndView deletar(@ModelAttribute("id") Long id, RedirectAttributes attr) {
+		dao.excluir(id);
+		attr.addFlashAttribute("message", "Usuario Excluido com sucesso!");
+		System.out.println("Objeto Excluido");
 		return new ModelAndView("redirect:/usuario/todos");
 	}
 }

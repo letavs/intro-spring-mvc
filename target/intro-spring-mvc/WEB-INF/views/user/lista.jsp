@@ -42,7 +42,9 @@
 							
 								<spring:url value="/usuario/update/${cadaUsuario.id}" var="update"/>
 								<a class="btn btn-info" href="${update}">Editar</a> 
-								<a class="btn btn-danger" href="#">Excluir</a>
+								
+								<spring:url value="/usuario/deletar/${cadaUsuario.id}" var="del"/>
+								<a class="btn btn-danger" href="${del}">Excluir</a>
 							</td>
 					</c:forEach>
 				</tbody>
