@@ -1,11 +1,13 @@
 package br.com.devmedia.curso.dao;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.devmedia.curso.domain.TipoSexo;
 import br.com.devmedia.curso.domain.Usuario;
 
 @Repository  // ou anotacao @Component
@@ -20,9 +22,9 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	private List<Usuario> criarListaUsuarios() {
 		if (lista == null) {
 			lista = new LinkedList<>();
-			lista.add(new Usuario(System.currentTimeMillis() + 1L, "Leandro", "da Silva"));
-			lista.add(new Usuario(System.currentTimeMillis() + 2L, "Solange", "Batista"));
-			lista.add(new Usuario(System.currentTimeMillis() + 3L, "Fernando", "Batista"));
+			lista.add(new Usuario(System.currentTimeMillis() + 1L, "Leandro", "da Silva", TipoSexo.MASCULINO, LocalDate.of(1992, 5, 10)));
+			lista.add(new Usuario(System.currentTimeMillis() + 2L, "Solange", "Batista",TipoSexo.FEMININO, LocalDate.of(1980, 10, 5)));
+			lista.add(new Usuario(System.currentTimeMillis() + 3L, "Fernando", "Batista",TipoSexo.MASCULINO, LocalDate.of(1988, 2, 28)));
 			lista.add(new Usuario(System.currentTimeMillis() + 4L, "Vinicius", "Lucca"));
 			lista.add(new Usuario(System.currentTimeMillis() + 5L, "Antonio", "da Silva"));
 			lista.add(new Usuario(System.currentTimeMillis() + 6L, "Mirtes", "Pereira"));
@@ -46,6 +48,9 @@ public class UsuarioDaoImpl implements UsuarioDao {
 			.forEach(u -> { // o forech ira localizar o usuario retornado do filter 
 			u.setNome(usuario.getNome()); // os set ira modificar os nomes e sobrenome
 			u.setSobrenome(usuario.getSobrenome());
+			u.setDtNascimento(usuario.getDtNascimento());
+			u.setSexo(usuario.getSexo());
+			
 		});
 	}
 

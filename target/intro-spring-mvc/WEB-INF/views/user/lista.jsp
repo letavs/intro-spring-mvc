@@ -30,6 +30,8 @@
 					<tr>
 						<th>ID</th>
 						<th>NOME</th>
+						<th>DATA DE NASCIMENTO</th>
+						<th>TIPO SEXO</th>
 						<th>ACÃO</th>
 					</tr>
 				</thead>
@@ -37,21 +39,27 @@
 					<c:forEach var="cadaUsuario" items="${usuarios }"> 
 						<tr>
 							<td>${cadaUsuario.id }</td>
-							<td>${cadaUsuario.nome }&nbsp;${cadaUsuario.sobrenome }</td>
+							<td>${cadaUsuario.nome }&nbsp;${cadaUsuario.sobrenome }
 							<td>
-							
+								<fmt:parseDate var="date" value="${cadaUsuario.dtNascimento }" pattern="yyyy-MM-dd" type="date"></fmt:parseDate>
+								<fmt:formatDate value="${date }" pattern="dd/MM/yyyy" type="date"/>
+							</td>
+							<td>${cadaUsuario.sexo.desc}</td>
+
+							<td>
 								<spring:url value="/usuario/update/${cadaUsuario.id}" var="update"/>
 								<a class="btn btn-info" href="${update}">Editar</a> 
-								
 								<spring:url value="/usuario/deletar/${cadaUsuario.id}" var="del"/>
 								<a class="btn btn-danger" href="${del}">Excluir</a>
 							</td>
+						</tr>
+							
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<footer class="footer"> <p>&copy; 2017 DevMedia</p></footer>
+	<p><img src="https://www.devmedia.com.br/favicon.png?w=112" height="40"/> &copy; 2020 DevMedia</p>
 	<hr>
 </body>
 </html>
