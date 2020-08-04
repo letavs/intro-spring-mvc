@@ -1,6 +1,8 @@
 /home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/web/Controller/UsuarioController.java
 /home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/config/RootConfig.java
+/home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/domain/TipoSexo.java
 /home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/config/SpringMvcConfig.java
+/home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/web/Controller/TipoSexoConverter.java
 /home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/dao/UsuarioDao.java
 /home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/web/Controller/WelcomeController.java
 /home/letavs/Workspace/devmedia/intro-spring-mvc/src/main/java/br/com/devmedia/curso/domain/Usuario.java

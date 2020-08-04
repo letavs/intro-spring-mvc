@@ -15,7 +15,7 @@
 - [X] 12. Editando os registro
 - [X] 13. Excluindo itens da listagem
 - [X] 14. Conversão de data entre view e controller
-- [ ] 15. Conversão de enum entre view e controller
+- [x] 15. Conversão de enum entre view e controller
 - [ ] 16. Validação com Bean Validation
 - [ ] 17. Mensagem de validação via arquivos
 - [ ] 18. Incluíndo Bootstrap

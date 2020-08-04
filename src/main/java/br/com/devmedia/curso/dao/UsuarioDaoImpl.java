@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.devmedia.curso.domain.TipoSexo;
 import br.com.devmedia.curso.domain.Usuario;
 
 @Repository  // ou anotacao @Component
@@ -21,9 +22,9 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	private List<Usuario> criarListaUsuarios() {
 		if (lista == null) {
 			lista = new LinkedList<>();
-			lista.add(new Usuario(System.currentTimeMillis() + 1L, "Leandro", "da Silva", LocalDate.of(1992, 5, 10)));
-			lista.add(new Usuario(System.currentTimeMillis() + 2L, "Solange", "Batista", LocalDate.of(1984, 2, 9)));
-			lista.add(new Usuario(System.currentTimeMillis() + 3L, "Fernando", "Batista", LocalDate.of(2015, 9, 9)));
+			lista.add(new Usuario(System.currentTimeMillis() + 1L, "Leandro", "da Silva", LocalDate.of(1992, 5, 10), TipoSexo.MASCULINO));
+			lista.add(new Usuario(System.currentTimeMillis() + 2L, "Solange", "Batista", LocalDate.of(1984, 2, 9), TipoSexo.FEMININO));
+			lista.add(new Usuario(System.currentTimeMillis() + 3L, "Fernando", "Batista", LocalDate.of(2015, 9, 9), TipoSexo.MASCULINO));
 			lista.add(new Usuario(System.currentTimeMillis() + 4L, "Vinicius", "Lucca"));
 			lista.add(new Usuario(System.currentTimeMillis() + 5L, "Antonio", "da Silva"));
 			lista.add(new Usuario(System.currentTimeMillis() + 6L, "Mirtes", "Pereira"));
@@ -48,6 +49,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 			u.setNome(usuario.getNome()); // os set ira modificar os nomes e sobrenome
 			u.setSobrenome(usuario.getSobrenome());
 			u.setDtNascimento(usuario.getDtNascimento());
+			u.setSexo(usuario.getSexo());
 		});
 	}
 

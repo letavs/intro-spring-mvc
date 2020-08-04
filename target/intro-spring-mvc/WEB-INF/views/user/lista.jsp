@@ -31,6 +31,7 @@
 						<th>ID</th>
 						<th>NOME</th>
 						<th>DATA DE NASCIMENTO</th>
+							<th>TIPO SEXO</th>
 						<th>ACÃO</th>
 					</tr>
 				</thead>
@@ -39,10 +40,12 @@
 						<tr>
 							<td>${cadaUsuario.id }</td>
 							<td>${cadaUsuario.nome }&nbsp;${cadaUsuario.sobrenome }</td>
+
 							<td>
 								<fmt:parseDate var="date" value="${cadaUsuario.dtNascimento }" pattern="yyyy-MM-dd" type="date"/>
 								<fmt:formatDate value="${date}" pattern="dd-MM-yyyy" type="date"/>
 							</td>
+							<td>${cadaUsuario.sexo.descricao }</td>
 								<td>
 								<spring:url value="/usuario/update/${cadaUsuario.id}" var="update"/>
 								<a class="btn btn-info" href="${update}">Editar</a> 

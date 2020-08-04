@@ -46,6 +46,13 @@
 					</div>
 					
 					<div class="form-group">
+						<label for="sexo">Tipo Sexo: </label>
+						<form:select path="sexo" class="form-control">
+							<form:options items="${sexos }" itemLabel="descricao"/>
+						</form:select>
+					</div>
+					
+					<div class="form-group">
 						<button type="submit" class="btn btn-primary">Confirmar</button>
 					</div>
 				</form:form>

@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.devmedia.curso.dao.UsuarioDao;
+import br.com.devmedia.curso.domain.TipoSexo;
 import br.com.devmedia.curso.domain.Usuario;
 
 /*o atributo value esta oculto no metodo. Boa pratica nomear controllers
@@ -39,6 +40,7 @@ public class UsuarioController {
 
  	@GetMapping("/cadastro")
 	public String cadastro(@ModelAttribute("usuario") Usuario usuario, ModelMap model) {
+ 		model.addAttribute("sexos", TipoSexo.values());
 		return "/user/adcionar";
 	}
 
