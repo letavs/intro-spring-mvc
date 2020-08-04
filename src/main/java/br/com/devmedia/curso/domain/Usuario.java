@@ -2,15 +2,27 @@ package br.com.devmedia.curso.domain;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+@SuppressWarnings("deprecation")
 public class Usuario {
 
 	private Long id;
+	
+	@NotBlank
+	@Size(min =3, max = 50)
 	private String nome;
+	
+	@NotBlank
+	@Size(min =3, max = 50, message = "Campo requirido entre {min} e {max} de caracteres")
 	private String sobrenome;
 	
+	@NotNull(message = "O campo data de nascimento nao pode ser vazio")
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dtNascimento;
 	

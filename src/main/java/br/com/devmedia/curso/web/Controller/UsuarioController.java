@@ -1,8 +1,11 @@
 package br.com.devmedia.curso.web.Controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,7 +48,11 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/save")
-	public String save(@ModelAttribute("usuario") Usuario usuario, RedirectAttributes attributes) {
+	public String save(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult result, RedirectAttributes attributes) {
+		if(result.hasErrors()) {
+			return "/user/adcionar";
+		}
+		
 		dao.salvar(usuario);
 		attributes.addFlashAttribute("message", "Cadastro efetuado com sucesso!");
 		System.out.println("Objeto Salvo!");
@@ -62,6 +69,7 @@ public class UsuarioController {
 	 **/
 	@GetMapping("/update/{id}")
 	public ModelAndView preUpdate(@PathVariable("id") Long id, ModelMap model) {
+		
 		Usuario usuario = dao.getId(id);
 		model.addAttribute("usuario", usuario);
 		return new ModelAndView("/user/adcionar", model);
@@ -71,7 +79,10 @@ public class UsuarioController {
 	* Esse sera o metodo que realmente fara alteracao
 	 **/
 	@PostMapping("/update")
-	public ModelAndView update(@ModelAttribute("usuario") Usuario usuario, RedirectAttributes attr) {
+	public ModelAndView update(@Valid @ModelAttribute("usuario") Usuario usuario,BindingResult result, RedirectAttributes attr) {
+		if(result.hasErrors()) {
+			return new ModelAndView("/user/adcionar");
+		}
 		dao.editar(usuario);
 		attr.addFlashAttribute("message", "Usuario Alterado com sucesso!");
 		System.out.println("Objeto Alterado");
