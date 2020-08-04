@@ -1,10 +1,18 @@
 package br.com.devmedia.curso.domain;
 
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 public class Usuario {
 
 	private Long id;
 	private String nome;
 	private String sobrenome;
+	
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate dtNascimento;
 	
 	public Usuario() {
 		
@@ -15,6 +23,22 @@ public class Usuario {
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
+	}
+
+	public Usuario(Long id, String nome, String sobrenome, LocalDate dtNascimento) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.dtNascimento = dtNascimento;
+	}
+
+	public LocalDate getDtNascimento() {
+		return dtNascimento;
+	}
+
+	public void setDtNascimento(LocalDate dtNascimento) {
+		this.dtNascimento = dtNascimento;
 	}
 
 	public Long getId() {
@@ -43,6 +67,6 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + "]";
+		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome +"Data de Nascimento" + dtNascimento+ "]";
 	}
 }
