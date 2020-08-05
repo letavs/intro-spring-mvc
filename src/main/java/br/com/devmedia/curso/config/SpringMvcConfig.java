@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -13,6 +14,12 @@ import br.com.devmedia.curso.web.Controller.TipoSexoConverter;
 
 @Configuration
 public class SpringMvcConfig extends WebMvcConfigurerAdapter {
+
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/bootstrap/");
+	}
 
 	@Bean
 	public InternalResourceViewResolver viewResolver() {

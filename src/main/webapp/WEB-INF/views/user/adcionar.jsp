@@ -7,18 +7,18 @@
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			<title>Cadastro de Usuários</title>
+			<spring:url var="css" value="/static/css/bootstrap.css"/>	
+			<link type="text/css" rel="stylesheet" href="${css }">
 		</head>
 		<body>
 			<div class="container">
 				<h1>Cadastro de Usuários</h1>
-			<hr>
-				<div>
-
-					<spring:url value="/usuario/todos" var="home"/>
-					<a class="btn btn-default" href="${home}">Home</a>
-				</div>
-			
-			</div>
+				<hr>
+					<div>
+						<spring:url value="/usuario/todos" var="home"/>
+						<a class="btn btn-primary" href="${home}">Home</a>
+					</div>
+				<hr>
 			<div>
 			<!-- modelAttribute e um componet do Spring que cria uma referencia a classe de dominio Model. No caso referenciada pela variavel usuario 
 				action ea tag utlizada para trabalhar com as URI. No caso do Spring utilizaremos os recursos da Taglib Spring  spring:url value="" com o caminnho do controller. A variavel var ira guardar esse caminho 
@@ -55,13 +55,15 @@
 						</form:select>
 					</div>
 					
-					<div class="form-group">
+					<div class="btn-group">
 						<button type="submit" class="btn btn-primary">Confirmar</button>
 					</div>
 				</form:form>
 			</div>
-		<footer class="footer">
-			<p><img src="https://www.devmedia.com.br/favicon.png?w=112" height="40"/> &copy; 2020 DevMedia</p>
-		</footer>
+			<hr>
+			<footer class="footer">
+				<p><img src="https://www.devmedia.com.br/favicon.png?w=112" height="40"/> &copy; 2020 DevMedia</p>
+			</footer>
+		</div>
 	</body>
 	</html>
